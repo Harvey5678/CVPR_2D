@@ -31,8 +31,8 @@ def compute_precision_recall_helper(path1, path2, units, threshold):
     for i in range(len(row_ind)):
         if cost_matrix[row_ind[i]][col_ind[i]] < threshold * threshold:
             matched_pts = matched_pts + 1
-    precision = matched_pts / cost_matrix.shape[1] if cost_matrix.shape[1] else 0
-    recall = matched_pts / cost_matrix.shape[0] if cost_matrix.shape[0] else 0
+    precision = matched_pts / len(x2)
+    recall = matched_pts / len(x1)
     return precision, recall
 
 def compute_precision_recall(path1, path2, units):
